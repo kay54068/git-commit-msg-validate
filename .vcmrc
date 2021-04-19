@@ -1,17 +1,43 @@
 {
-  "helpMessage": "\nPlease fix your commit message (and consider using http://npm.im/commitizen)\n",
-  "types": [
-    "feat",
-    "fix",
-    "docs",
-    "style",
-    "refactor",
-    "perf",
-    "test",
-    "chore",
-    "revert",
-    "custom"
-  ],
+  "helpMessage": "\n請協助完善 Commit 資訊, 必要時請協助維護 .vcmrc 檔案的 types or scope[allowed] 項目!!\n",
+  "scopesetting": {
+    "required": false,
+    "validate": true,
+    "multiple": false
+
+  },
+  "maxSubjectLength": 100,
   "warnOnFail": false,
-  "autoFix": true
+  "autoFix": true,
+  "blanklineErrorMsg": "第二行必須為空白行, 用於區分主旨與內文",
+  "patternErrorMsg": "格式不符,請使用以下格式:\n <type>(<scope>):<空格>新增/修改/修正/刪除/重構/優化 <subject> ",
+  "scopes": {
+    "Docs":                 "文件相關",
+    "Tool":                 "工具程式相關",
+    "Shell":                "Shell Script相關",
+    "QtConfig":            "Qt 專案配置相關",
+    "GitConfig":           "Git 板控配置相關"
+  },
+  "scopeErrorMsg": "scope 無效,請使用以下 scope: ",
+
+  "types": {
+    "breaking": "Breaking Changes",
+    "build": "Build System / Dependencies",
+    "ci": "Continuous Integration",
+    "chore": "Chores",
+    "docs": "Documentation Changes",
+    "feat": "New Features",
+    "fix": "Bug Fixes",
+    "other": "Other Changes",
+    "perf": "Performance Improvements",
+    "refactor": "Refactors",
+    "revert": "Reverts",
+    "style": "Code Style Changes",
+    "test": "Tests"
+  },
+  "typePatternErrorMsg": "type 無效,請使用以下type: ",
+
+  "subjectPattern": "新增|add|修改|modify|修正|fixed|刪除|delete|重構|refactor|合併|merge|優化|refine|improve",
+  "subjectPatternErrorMsg": "subject 無效, 請確認是否有包含以下其中字串: "
+
 }

@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+############################################################
+#                 Variable
+############################################################
+os_version=$(uname -s)
+dir=`pwd`
+
+###############################################################
+#                 Function
+###############################################################
+
+## Commit 格式校驗 ##
+validateCommitMsg(){
+
+echo "run validateCommitMsg..."
+cmd_linux=$dir/.githooks/validate-commit-msg-linux
+cmd_windows=$dir/.githooks/validate-commit-msg-win.exe
+
+if [[ $os_version =~ "Linux" ]]; then
+  echo "linux"
+  $cmd_linux "`cat .git/COMMIT_EDITMSG`"
+elif [[ $os_version =~ "MINGW" ]]; then   
+  echo "Windows"
+  $cmd_windows "`cat .git/COMMIT_EDITMSG`"
+elif [[ $os_version =~ "Darwin" ]]; then
+  echo "Mac OS X"
+  $cmd_linux "`cat .git/COMMIT_EDITMSG`"
+fi
+}
+
+###############################################################
+#                   Main Content
+###############################################################
+
+## validateCommitMsg ##
+validateCommitMsg
