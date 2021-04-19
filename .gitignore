@@ -14,3 +14,5 @@ nohup.out
 .opt-out
 
 tmp
+release
+package-lock.json
